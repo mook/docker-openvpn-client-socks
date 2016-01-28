@@ -16,7 +16,7 @@ Alternatively, using `docker run` directly:
 ```bash
 docker run -t -i --device=/dev/net/tun --cap-add=NET_ADMIN \
     --volume client_config.ovpn:/ovpn.conf:ro \
-    mook/openvpn-client
+    mook/openvpn-client-socks
 ```
 
 ### OpenVPN Configuration Constraints

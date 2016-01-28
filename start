@@ -8,4 +8,4 @@ exec docker run \
     --cap-add=NET_ADMIN \
     --publish 127.0.0.1:1081:1080 \
     --volume "$(realpath "$1"):/ovpn.conf:ro" \
-    mook/openvpn-client
+    mook/openvpn-client-socks
