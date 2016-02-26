@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
-/etc/openvpn/up.sh "$@"
-exec /usr/sbin/sockd -D
+[ -f /etc/openvpn/up.sh ] && /etc/openvpn/up.sh "$@"
+/usr/sbin/sockd -D
