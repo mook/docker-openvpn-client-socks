@@ -18,7 +18,14 @@ start /your/openvpn/directory
 Alternatively, using `docker run` directly:
 
 ```bash
-docker run -it --device=/dev/net/tun --cap-add=NET_ADMIN \
-    --volume /your/openvpn/directory/:/etc/openvpn/:ro \
+docker run -it --rm --device=/dev/net/tun --cap-add=NET_ADMIN \
+    --name openvpn-client \
+    --volume /your/openvpn/directory/:/etc/openvpn/:ro -p 1081:1080 \
     kizzx2/openvpn-client-socks
+```
+
+Then connect to SOCKS proxy through through `local.docker:1081`. For example:
+
+```bash
+curl --proxy socks5://local.docker:1081 ipinfo.io
 ```

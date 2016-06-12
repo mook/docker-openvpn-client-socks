@@ -5,6 +5,7 @@ exec docker run \
     --tty \
     --interactive \
     --device=/dev/net/tun \
+    --name=openvpn-client \
     --cap-add=NET_ADMIN \
     --publish 127.0.0.1:1081:1080 \
     --volume "$(realpath "$1"):/etc/openvpn/:ro" \
