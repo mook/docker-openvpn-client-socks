@@ -15,6 +15,7 @@ Alternatively, using `docker run` directly:
 
 ```bash
 docker run -t -i --device=/dev/net/tun --cap-add=NET_ADMIN \
+    --publish 127.0.0.1:1080:1080 \
     --volume client_config.ovpn:/ovpn.conf:ro \
     mook/openvpn-client-socks
 ```
