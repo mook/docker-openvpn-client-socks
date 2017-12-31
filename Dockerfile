@@ -8,7 +8,7 @@
 
 FROM alpine
 
-ADD sockd.sh /usr/local/bin/
+COPY sockd.sh /usr/local/bin/
 
 RUN true \
     && echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
@@ -17,9 +17,9 @@ RUN true \
     && chmod a+x /usr/local/bin/sockd.sh \
     && true
 
-ADD sockd.conf /etc/
+COPY sockd.conf /etc/
 
 ENTRYPOINT [ \
     "/bin/bash", "-c", \
-    "cd /etc/openvpn && /usr/sbin/openvpn --config *.conf --up /usr/local/bin/sockd.sh" \
+    "cd /etc/openvpn && /usr/sbin/openvpn --config *.conf --script-security 2 --up /usr/local/bin/sockd.sh" \
     ]
