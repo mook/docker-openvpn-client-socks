@@ -35,3 +35,9 @@ Then connect to SOCKS proxy through through `localhost:1080` / `local.docker:108
 ```bash
 curl --proxy socks5h://local.docker:1080 ipinfo.io
 ```
+
+## HTTP Proxy
+
+You can easily convert this to an HTTP proxy using [http-proxy-to-socks](https://github.com/oyyd/http-proxy-to-socks), e.g.
+
+hpts -s 127.0.0.1:1080 -p 8080
