@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    openvpn-client-socks:
+        build: .
+        cap_add:
+          - NET_ADMIN
+        devices:
+            - /dev/net/tun
+        ports:
+            - '1081:1080'
+        env_file:
+          - .env
+        volumes:
+            - ./vpn.ovpn:/vpn/ovpn.conf
