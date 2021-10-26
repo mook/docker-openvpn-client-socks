@@ -1,7 +1,8 @@
 version: '3.3'
 services:
     openvpn-client-socks:
-        build: .
+        image: ghcr.io/cielpy/docker-openvpn-client-socks:master
+        restart: always
         cap_add:
           - NET_ADMIN
         devices:
