@@ -1,6 +1,6 @@
 #!/bin/sh
-echo $USER > /tmp.txt
-echo $PASSWORD >> /tmp.txt
+echo $OPENVPN_USER > /tmp.txt
+echo $OPENVPN_PASSWORD >> /tmp.txt
 chmod 600 /tmp.txt
 openvpn \
 --config /vpn/ovpn.conf \
