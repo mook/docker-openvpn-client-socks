@@ -18,9 +18,6 @@ RUN true \
     && true
 
 ADD sockd.conf /etc/
+COPY entrypoint.sh /
 
-ENTRYPOINT [ \
-    "openvpn", \
-    "--up", "/usr/local/bin/sockd.sh", \
-    "--script-security", "2", \
-    "--config", "/ovpn.conf"]
+ENTRYPOINT ["/entrypoint.sh"]

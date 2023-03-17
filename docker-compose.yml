@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    openvpn-client-socks:
+        image: ghcr.io/cielpy/docker-openvpn-client-socks:master
+        restart: always
+        cap_add:
+          - NET_ADMIN
+        devices:
+            - /dev/net/tun
+        ports:
+            - '1081:1080'
+        env_file:
+          - .env
+        volumes:
+            - ./vpn.ovpn:/vpn/ovpn.conf
