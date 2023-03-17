@@ -32,7 +32,7 @@ docker run -t -i --device=/dev/net/tun --cap-add=NET_ADMIN \
     --volume client_config.ovpn:/vpn/ovpn.conf:ro \
     -e USER=ahh \
     -e PASSWORD=ahh \
-    mook/openvpn-client-socks
+    ghcr.io/ekkog/docker-openvpn-client-socks:master
 ```
 
 ### OpenVPN Configuration Constraints
